@@ -51,7 +51,13 @@ for ts in terminal_symbols:
     print("|",ts, end="\t")
 print("")
 for key in dfa:
-    print(key, end="\t")
+    
+    if nfa_initial_state in key:
+        print("->"+key, end="\t")
+    elif nfa_final_state in key:
+        print("*"+key, end="\t")
+    else:
+        print(key, end="\t")
     for ts in terminal_symbols:
         if ts in dfa[key]:
             print("|",dfa[key][ts], end="\t")
