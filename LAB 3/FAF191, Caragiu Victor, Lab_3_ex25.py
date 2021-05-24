@@ -180,12 +180,6 @@ def check_two_nt_symbols(symbols):
 		return True
 	else:
 		return False
-	'''	
-	if len(symbols) == 2 and symbols[0] >= 'A' and symbols[0] <= 'Z' and symbols[1] >= 'A' and symbols[1] <= 'Z':
-		return True
-	else:
-		return False
-	'''
 	
 	
 def check_t_and_nt_and_build(symbols, terminals, new_from_terminals):
@@ -323,7 +317,6 @@ def follow_cnf_rules(productions_left, nonterminals, terminals):
 							new_values.append(result[idx-1:idx+1])
 							
 						value[idx_result] = result[:idx-1] + 'Y' + str(key_idx_1) + result[idx+1:]
-						#new_productions[key].append(result[:idx-1] + 'Z' + str(key_idx_1) + result[idx+1:])
 					symbol_type = 1
 				
 				else:
